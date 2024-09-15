@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="log.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-box">
+            <div class="form-inner">
+                <!-- Toggle input -->
+                <input type="checkbox" id="toggle" aria-hidden="true" />
+
+                <!-- Login Form -->
+                <div class="login-box">
+                    <h2>Login</h2>
+                    <form>
+                        <div class="input-box">
+                            <input type="text" required>
+                            <label>Username</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <p class="toggle-link">Don't have an account? <a href="#" id="register-link">Register here</a></p>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div class="register-box">
+                    <h2>Register</h2>
+                    <form>
+                        <div class="input-box">
+                            <input type="text" required>
+                            <label>Username</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" required>
+                            <label>Confirm Password</label>
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                        <p class="toggle-link">Already have an account? <a href="#" id="login-link">Login here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle between login and register forms
+        const toggle = document.getElementById('toggle');
+        const registerLink = document.getElementById('register-link');
+        const loginLink = document.getElementById('login-link');
+
+        // Switch to the register form when clicking the 'Register here' link
+        registerLink.addEventListener('click', (event) => {
+            event.preventDefault();  // Prevent default link behavior
+            toggle.checked = true;
+        });
+
+        // Switch to the login form when clicking the 'Login here' link
+        loginLink.addEventListener('click', (event) => {
+            event.preventDefault();  // Prevent default link behavior
+            toggle.checked = false;
+        });
+    </script>
+</body>
+</html>
